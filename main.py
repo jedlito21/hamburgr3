@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 import os
 
 vobrazky = []
-promeny = []
+
 
 okno = Tk()
 
@@ -72,18 +72,21 @@ drop_omacky.pack()
 def exit():
     okno.destroy()
 
+
+promeny = [rajce_vyber, salat_vyber, okurka_vyber, cibule_vyber]
 def submit():
     for widgets in okno.winfo_children():
         widgets.destroy()
     with os.scandir('img/') as entries:
         for entry in entries:
             print(entry.name)
-        # if .get() == True:
-        #     load = Image.open(entry)
-        #     render = ImageTk.PhotoImage(load)
-        #     photo = Label(okno, width=100, image=render)
-        #     vobrazky.append(render)
-        #     photo.pack()
+            # for check in promeny:
+            #     if check.get() == True:
+            #         load = Image.open()
+            #         render = ImageTk.PhotoImage(load)
+            #         photo = Label(okno, width=200, image=render)
+            #         vobrazky.append(render)
+            #         photo.pack()
 
     Button(okno, text='Zavřít', width=20, command=exit).pack()
 
