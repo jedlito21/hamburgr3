@@ -110,8 +110,8 @@ def submit():
     bottom = Image.open(f"img/{transform[clicked.get()]}_spodek.png")
     top = ImageTk.PhotoImage(top)
     bottom = ImageTk.PhotoImage(bottom)
-    top_label = Label(okno, image=top, height=70)
-    bottom_label = Label(okno, image=bottom, height=70)
+    top_label = Label(okno, image=top, height=110)
+    bottom_label = Label(okno, image=bottom, height=110)
     top_label.image = top
     bottom_label.image = bottom
     top_label.pack()
@@ -119,7 +119,7 @@ def submit():
         if input.get() != 0 and input.get() != '':
             load = Image.open(f"img/{transform[input.get()]}.png")
             render = ImageTk.PhotoImage(load)
-            photo = Label(okno, height=70, image=render)
+            photo = Label(okno, height=110, image=render)
             photo.image = render
             photo.pack()
     bottom_label.pack()
